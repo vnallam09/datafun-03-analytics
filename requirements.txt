@@ -4,3 +4,4 @@ palmerpenguins
 ipydatagrid
 requests
 openpyxl
+loguru
