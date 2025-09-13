@@ -68,7 +68,7 @@ loguru
 
 2. Process data:
    ```bash
-   python teja_process_csv.py     # Analyze happiness data
+   python teja_process_csv.py     # Analyze Airline Safety data
    python teja_process_json.py    # Analyze ISS position
    python teja_process_excel.py   # Process Excel data
    python teja_process_text.py    # Analyze text content
