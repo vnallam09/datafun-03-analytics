@@ -1,5 +1,5 @@
 """
-Process a text file to count occurrences of the word "Romeo" and save the result.
+Process a text file to count occurrences of the word "Dracula" and save the result.
 """
 
 #####################################
@@ -9,6 +9,7 @@ Process a text file to count occurrences of the word "Romeo" and save the result
 # Import from Python Standard Library
 import pathlib
 import sys
+import re
 
 # Ensure project root is in sys.path for local imports
 sys.path.append(str(pathlib.Path(__file__).resolve().parent))
@@ -20,9 +21,8 @@ from utils_logger import logger
 # Declare Global Variables
 #####################################
 
-# TODO: Replace with the names of your folders
-FETCHED_DATA_DIR: str = "example_data"
-PROCESSED_DIR: str = "example_processed"
+FETCHED_DATA_DIR: str = "requested_data"
+PROCESSED_DIR: str = "data_processed"
 
 #####################################
 # Define Functions
@@ -31,34 +31,32 @@ PROCESSED_DIR: str = "example_processed"
 def count_word_occurrences(file_path: pathlib.Path, word: str) -> int:
     """Count the occurrences of a specific word in a text file (case-insensitive)."""
     try:
-        with file_path.open('r') as file:
+        with file_path.open('r', encoding='utf-8') as file:
             content: str = file.read()
-            return content.lower().count(word.lower())
+            # Use word boundaries to match complete words only
+            word_pattern = r'\b' + re.escape(word.lower()) + r'\b'
+            matches = re.findall(word_pattern, content.lower())
+            return len(matches)
     except Exception as e:
         logger.error(f"Error reading text file: {e}")
-        return 1
+        return 0
 
 def process_text_file():
-    """Read a text file, count occurrences of 'Romeo', and save the result."""
+    """Read a text file, count occurrences of 'Dracula', and save the result."""
  
-    # TODO: Replace with path to your text data file
-    input_file = pathlib.Path(FETCHED_DATA_DIR, "romeo.txt")
+    input_file = pathlib.Path(FETCHED_DATA_DIR, "dracula.txt")
 
-    # TODO: Replace with path to your text processed file
-    output_file = pathlib.Path(PROCESSED_DIR, "text_romeo_word_count.txt")
+    output_file = pathlib.Path(PROCESSED_DIR, "text_dracula_word_count.txt")
 
-    # TODO: Replace with the word you want to count from your text file
-    word_to_count: str = "Romeo"
+    word_to_count: str = "Dracula"
 
-    # TODO: Make any necessary changes to the logic
     word_count: int = count_word_occurrences(input_file, word_to_count)
 
     # Create the output directory if it doesn't exist
     output_file.parent.mkdir(parents=True, exist_ok=True)
 
     # Write the results to the output file
-    with output_file.open('w') as file:
-        # TODO: Update the output to describe your results
+    with output_file.open('w', encoding='utf-8') as file:
         file.write(f"Occurrences of '{word_to_count}': {word_count}\n")
     
     # Log the processing of the TEXT file

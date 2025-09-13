@@ -27,7 +27,7 @@ from utils_logger import logger
 # Declare Global Variables
 #####################################
 
-FETCHED_DATA_DIR = "example_data"
+FETCHED_DATA_DIR = "requested_data"
 
 #####################################
 # Define Functions
@@ -79,7 +79,7 @@ def write_txt_file(folder_name: str, filename: str, string_data: str) -> None:
     try:
         logger.info(f"Writing data to {file_path}...")
         file_path.parent.mkdir(parents=True, exist_ok=True)
-        with file_path.open('w') as file:
+        with file_path.open('w', encoding='utf-8') as file:
             file.write(string_data)
         logger.info(f"SUCCESS: Data written to {file_path}")
     except IOError as io_err:
@@ -93,9 +93,9 @@ def main():
     """
     Main function to demonstrate fetching text data.
     """
-    txt_url = 'https://raw.githubusercontent.com/denisecase/datafun-03-analytics/main/hosted/romeo.txt'
+    txt_url = 'https://www.gutenberg.org/files/345/345-0.txt'
     logger.info("Starting text fetch demonstration...")
-    fetch_txt_file(FETCHED_DATA_DIR, "romeo.txt", txt_url)
+    fetch_txt_file(FETCHED_DATA_DIR, "dracula.txt", txt_url)
 
 #####################################
 # Conditional Execution

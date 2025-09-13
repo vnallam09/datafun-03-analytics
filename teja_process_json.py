@@ -38,8 +38,6 @@ PROCESSED_DIR: str = "data_processed"
 # Define Functions
 #####################################
 
-# TODO: Add or replace this with a function that reads and processes your JSON file
-
 def iss_location_finder(file_path: pathlib.Path) -> dict:
     """Get the ISS spacecraft current position (latitude and longitude) from a JSON file."""
     try:
