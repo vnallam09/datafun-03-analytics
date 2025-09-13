@@ -1,0 +1,4 @@
+Safest 5 Airlines:
+[{'airline': 'Aer Lingus', 'safety_metric': 0}, {'airline': 'Aerolineas Argentinas', 'safety_metric': 0}, {'airline': 'Air Canada', 'safety_metric': 0}, {'airline': 'British Airways*', 'safety_metric': 0}, {'airline': 'Cathay Pacific*', 'safety_metric': 0}]=================
+Least Safe 5 Airlines:
+[{'airline': 'Air India*', 'safety_metric': 489}, {'airline': 'Japan Airlines', 'safety_metric': 521}, {'airline': 'American*', 'safety_metric': 525}, {'airline': 'Malaysia Airlines', 'safety_metric': 574}, {'airline': 'China Airlines', 'safety_metric': 767}]=================
