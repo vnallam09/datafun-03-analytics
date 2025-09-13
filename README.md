@@ -86,7 +86,7 @@ python teja_run_all.py
 - Processed results are stored in the `data_processed/` directory
 - Log files are stored in the `logs/` directory
 - Each processing module generates specific insights:
-  - CSV: Statistics on world happiness scores
+  - CSV: Statistics Airline Safety scores
   - JSON: ISS position coordinates and hemisphere location
   - Excel: Feedback data analysis
   - Text: Text content analysis
