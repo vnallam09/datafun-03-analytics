@@ -1,9 +1,6 @@
 """
 This example file fetches JSON data of astronauts currently in space 
 from the web and saves it to a local file named example_data/astronauts.json.
-
-TODO: Save a copy of the provided utils_logger.py file 
-in the same folder as this file.
 """
 
 #####################################
@@ -28,7 +25,7 @@ from utils_logger import logger
 # Declare Global Variables
 #####################################
 
-FETCHED_DATA_DIR = "example_data"
+FETCHED_DATA_DIR = "requested_data"
 
 #####################################
 # Define Functions
@@ -94,9 +91,9 @@ def main():
     """
     Main function to demonstrate fetching JSON data.
     """
-    json_url = 'http://api.open-notify.org/astros.json'
-    logger.info("Starting JSON fetch demonstration...")
-    fetch_json_file(FETCHED_DATA_DIR, "astros.json", json_url)
+    json_url = 'http://api.open-notify.org/iss-now.json'
+    logger.info("Starting JSON fetch...")
+    fetch_json_file(FETCHED_DATA_DIR, "iss_location.json", json_url)
 
 #####################################
 # Conditional Execution
